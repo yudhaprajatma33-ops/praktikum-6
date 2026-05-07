@@ -1,0 +1,494 @@
+# BettaPedia - Tampilan Modern Bootstrap
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BettaPedia Modern</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+.navbar{
+    background:rgba(0,0,0,0.8)!important;
+    backdrop-filter:blur(10px);
+}
+
+.navbar-brand{
+    font-weight:700;
+    color:#fff !important;
+    letter-spacing:1px;
+}
+
+.nav-link{
+    color:#ddd !important;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#00bfff !important;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=1600&auto=format&fit=crop') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+
+.hero h1{
+    font-size:60px;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:18px;
+    margin-top:15px;
+    opacity:.9;
+}
+
+.hero .btn{
+    margin-top:25px;
+    padding:12px 28px;
+    border-radius:50px;
+    font-weight:600;
+}
+
+/* SECTION */
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-weight:700;
+    color:#222;
+}
+
+.section-padding{
+    padding:90px 0;
+}
+
+/* CARD */
+.custom-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    background:white;
+}
+
+.custom-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+}
+
+.custom-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.card-body h5{
+    font-weight:700;
+}
+
+/* TESTIMONI */
+.testimoni{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+.testi-box{
+    background:rgba(255,255,255,.08);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.testi-box:hover{
+    transform:scale(1.03);
+}
+
+/* PRICING */
+.price-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.price-card:hover{
+    transform:translateY(-10px);
+}
+
+.price-header{
+    padding:18px;
+    color:white;
+    font-weight:700;
+    text-align:center;
+}
+
+.basic{background:#2563eb;}
+.premium{background:#16a34a;}
+.pro{background:#f59e0b;}
+
+.price-body{
+    padding:35px;
+    text-align:center;
+    background:white;
+}
+
+.price-body h2{
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.price-body ul{
+    list-style:none;
+    padding:0;
+}
+
+.price-body ul li{
+    margin:10px 0;
+}
+
+/* FOOTER */
+footer{
+    background:#0f172a;
+    color:white;
+    padding:30px 0;
+    text-align:center;
+}
+
+/* FLOATING BUTTON */
+.top-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:none;
+    background:#0ea5e9;
+    color:white;
+    font-size:20px;
+    display:none;
+    z-index:999;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">BettaPedia</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#jenis">Jenis Cupang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="container">
+        <h1>Selamat Datang di BettaPedia</h1>
+        <p>
+            Platform modern untuk informasi ikan cupang terbaik,
+            edukasi budidaya, dan koleksi ikan berkualitas.
+        </p>
+
+        <button class="btn btn-primary shadow-lg">
+            Pelajari Lebih Lanjut
+        </button>
+    </div>
+</section>
+
+<!-- LAYANAN -->
+<section class="section-padding" id="layanan">
+    <div class="container">
+
+        <h2 class="section-title">Layanan Kami</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card custom-card h-100">
+                    <img src="Betta.jpg">
+                    <div class="card-body">
+                        <h5>Konsultasi Cupang</h5>
+                        <p>
+                            Memberikan edukasi dan konsultasi mengenai perawatan ikan cupang.
+                        </p>
+                        <button class="btn btn-primary">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card custom-card h-100">
+                    <img src="3.jpg">
+                    <div class="card-body">
+                        <h5>Budidaya Modern</h5>
+                        <p>
+                            Tips breeding modern untuk menghasilkan ikan berkualitas kontes.
+                        </p>
+                        <button class="btn btn-primary">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card custom-card h-100">
+                    <img src="2.png">
+                    <div class="card-body">
+                        <h5>Marketplace</h5>
+                        <p>
+                            Tempat jual beli ikan cupang premium dengan kualitas terbaik.
+                        </p>
+                        <button class="btn btn-primary">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- JENIS CUPANG -->
+<section class="section-padding bg-light" id="jenis">
+    <div class="container">
+
+        <h2 class="section-title">Jenis Ikan Cupang</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card custom-card text-center p-3">
+                    <h4>Plakat</h4>
+                    <p>Sirip pendek dan agresif.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card custom-card text-center p-3">
+                    <h4>Halfmoon</h4>
+                    <p>Ekor membuka hingga 180°.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card custom-card text-center p-3">
+                    <h4>Crowntail</h4>
+                    <p>Sirip seperti mahkota.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card custom-card text-center p-3">
+                    <h4>Galaxy</h4>
+                    <p>Corak unik seperti galaksi.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="section-padding testimoni">
+    <div class="container">
+
+        <h2 class="section-title text-white">Testimoni Pengguna</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="testi-box">
+                    <h5>Andi Saputra</h5>
+                    <p>
+                        “Website ini sangat membantu saya belajar budidaya ikan cupang.”
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testi-box">
+                    <h5>Rizky Pratama</h5>
+                    <p>
+                        “Tampilannya keren dan informasinya lengkap banget.”
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="testi-box">
+                    <h5>Fajar Nugroho</h5>
+                    <p>
+                        “Saya jadi lebih paham jenis dan kualitas ikan cupang.”
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section-padding" id="pricing">
+    <div class="container">
+
+        <h2 class="section-title">Paket Pelatihan</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="price-card">
+                    <div class="price-header basic">Paket Basic</div>
+                    <div class="price-body">
+                        <h2>Rp49K</h2>
+                        <ul>
+                            <li>1 Ebook</li>
+                            <li>Materi Dasar</li>
+                            <li>Forum Diskusi</li>
+                        </ul>
+                        <button class="btn btn-primary">Pilih Paket</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="price-card">
+                    <div class="price-header premium">Paket Premium</div>
+                    <div class="price-body">
+                        <h2>Rp99K</h2>
+                        <ul>
+                            <li>Video Premium</li>
+                            <li>Konsultasi</li>
+                            <li>Update Materi</li>
+                        </ul>
+                        <button class="btn btn-success">Pilih Paket</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="price-card">
+                    <div class="price-header pro">Paket Pro</div>
+                    <div class="price-body">
+                        <h2>Rp149K</h2>
+                        <ul>
+                            <li>Kelas Eksklusif</li>
+                            <li>Mentoring</li>
+                            <li>Sertifikat</li>
+                        </ul>
+                        <button class="btn btn-warning">Pilih Paket</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h4>BettaPedia</h4>
+    <p>
+        © 2026 - Website modern Bootstrap tentang ikan cupang.
+    </p>
+</footer>
+
+<!-- BUTTON TOP -->
+<button class="top-btn" id="topBtn">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// BUTTON SCROLL TOP
+const topBtn = document.getElementById('topBtn');
+
+window.onscroll = function(){
+    if(document.documentElement.scrollTop > 300){
+        topBtn.style.display = 'block';
+    } else {
+        topBtn.style.display = 'none';
+    }
+}
+
+topBtn.onclick = function(){
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
+
+// ANIMASI CARD
+const cards = document.querySelectorAll('.custom-card, .price-card');
+
+cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.transform = `rotateX(${-(y - rect.height/2)/20}deg) rotateY(${(x - rect.width/2)/20}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0) rotateY(0)';
+    });
+});
+</script>
+
+</body>
+</html>
+```
